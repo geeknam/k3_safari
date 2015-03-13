@@ -22,7 +22,6 @@ function NotificationsController($scope, $http) {
     }
     else {
         $http.get(API_URL).success(function(response){
-
             angular.forEach(response, function(value, key){
                value.data.url += UTM + '&utm_campaign=' + value.type ;
             });
@@ -31,6 +30,10 @@ function NotificationsController($scope, $http) {
         });
     }
 
+    $scope.search = function() {
+        var newTab = safari.application.activeBrowserWindow.openTab("background");
+        newTab.url = "http://www.kogan.com/au/search/?keywords=" + $scope.keyword + '&' + UTM.slice(1);
+    };
 }
 
 

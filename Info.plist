@@ -18,43 +18,34 @@
 	<string>1</string>
 	<key>Chrome</key>
 	<dict>
-		<key>Context Menu Items</key>
-		<array>
-			<dict>
-				<key>Identifier</key>
-				<string>kogan</string>
-				<key>Title</key>
-				<string>Kogan</string>
-			</dict>
-		</array>
 		<key>Database Quota</key>
 		<real>52428800</real>
 		<key>Global Page</key>
-		<string>popover.html</string>
+		<string>index.html</string>
 		<key>Popovers</key>
 		<array>
 			<dict>
 				<key>Filename</key>
 				<string>popover.html</string>
 				<key>Height</key>
-				<real>700</real>
+				<real>600</real>
 				<key>Identifier</key>
 				<string>popover</string>
 				<key>Width</key>
-				<real>400</real>
+				<real>420</real>
 			</dict>
 		</array>
 		<key>Toolbar Items</key>
 		<array>
 			<dict>
 				<key>Identifier</key>
-				<string>kogan_toolbar</string>
+				<string>kogan toolbar</string>
 				<key>Image</key>
 				<string>icon.png</string>
 				<key>Label</key>
 				<string>Kogan</string>
 				<key>Palette Label</key>
-				<string>Kenny</string>
+				<string>Shop at Kogan</string>
 				<key>Popover</key>
 				<string>popover</string>
 				<key>Tool Tip</key>

@@ -1,6 +1,11 @@
+html {
+  background: #fff;
+}
+
 body {
     font-family: Helvetica,Arial,sans-serif;
     margin: 0px;
+    width: 400px;
 }
 
 a {

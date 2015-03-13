@@ -6,7 +6,6 @@ var LAST_CHECK_KEY = 'last_checked';
 var LAST_SHOWN_SUMMARY = 'last_shown_summary';
 var NOTIFICATION_KEY = 'notification_key';
 var NOTIFICATIONS = 'notifications';
-var OPTIONS_KEY = 'options';
 
 var EVENT_TYPES = [
     {
