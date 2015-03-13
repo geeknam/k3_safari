@@ -33,9 +33,9 @@ function NotificationsController($scope, $http) {
             chrome.tabs.create({url: DOMAIN + notification_url});
             _this.resetBadgeText(unreadEvents - 1);
         });
-
     };
 
+    // Needs rework
     Notifications.prototype.check_first_install = function() {
         // Check whether new version is installed
         chrome.runtime.onInstalled.addListener(function(details){
@@ -140,6 +140,8 @@ function NotificationsController($scope, $http) {
         }, function(notification_id){
             _this.discard_notification(notification_id);
         });
+
+        this.createSafariNotification(event.data.title, event.message)
     };
 
     Notifications.prototype.fetch_latest_notification = function(show_popup, show_announcement) {
@@ -167,6 +169,7 @@ function NotificationsController($scope, $http) {
         $http.get(API_URL + "count/?timestamp=" + last_checked).success(function(data){
             count = data['count'];
             last_checked = data['timestamp'];
+            console.log(data);
             if(count > 0) {
                 _this.fetch_latest_notification(show_popup, show_announcement);
                 _this.resetBadgeText(count);
@@ -200,6 +203,48 @@ function NotificationsController($scope, $http) {
                     clearInterval(this);
                 }
             }, 1000);
+        }
+    };
+
+    Notifications.prototype.createSafariNotification = function(title, message, imageUrl) {
+        var _this = this;
+        // check for notification compatibility
+        if(!window.Notification) {
+            // if browser version is unsupported, be silent
+            return;
+        }
+        // log current permission level
+        // if the user has not been asked to grant or deny notifications from this domain
+        if(Notification.permission === 'default') {
+            Notification.requestPermission(function() {
+                // callback this function once a permission level has been set
+                _this.createSafariNotification(title, message, imageUrl);
+            });
+        }
+        // if the user has granted permission for this domain to send notifications
+        else if(Notification.permission === 'granted') {
+            var n = new Notification(
+                        title,
+                        {
+                          'body': message,
+                          // prevent duplicate notifications
+                          'tag' : 'unique string'
+                        }
+                    );
+            // remove the notification from Notification Center when it is clicked
+            n.onclick = function() {
+                
+                this.close();
+            };
+            // callback function when the notification is closed
+            n.onclose = function() {
+                console.log('Notification closed');
+            };
+        }
+        // if the user does not want notifications to come from this domain
+        else if(Notification.permission === 'denied') {
+            // be silent
+            return;
         }
     };
 
