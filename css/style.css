@@ -1,0 +1,194 @@
+body {
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:active{
+    outline:none;
+}
+
+ul {
+    list-style-type: none;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+#notification-wrapper {
+  min-width: 380px;
+}
+
+#notification-wrapper p {
+  font-weight: bold;
+  font-size: 13px;
+}
+#notification-wrapper .logo {
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
+#notification-wrapper .logo img {
+  padding-left: 60px;
+  height: 30px;
+}
+#notification-wrapper img.settings  {
+  padding: 5px 15px 0 0;
+  float:right;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+#notification-wrapper .search {
+  text-align:center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+#notification-wrapper .search input{
+    width: 270px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:8px;
+    box-shadow: 1px 0px 10px #ccc;
+}
+
+#notification-wrapper .search input:focus{
+  outline-color: transparent;
+  outline-style: none;
+}
+
+#notification-wrapper .search button{
+    background: #e51937;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #c10924;
+    position: relative;
+    padding: 2px;
+    right: 10px;
+    height: 31px;
+    width: 60px;
+    box-shadow: 0px 0px 10px #ccc;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#notification-wrapper .search button:hover {
+    cursor: pointer;
+}
+
+#notification-wrapper ul .new {
+  background-color: #f0f5f9;
+}
+#notification-wrapper ul .new .image img {
+  border: 1px solid #D4D4D4;
+}
+#notification-wrapper ul li {
+  border-bottom: 1px solid #D4D4D4;
+}
+#notification-wrapper ul li:last-child {
+  border-bottom: none;
+}
+#notification-wrapper ul li:hover {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+#notification-wrapper ul li img {
+  height: 72px;
+  width: 120px;
+  float: left;
+}
+#notification-wrapper ul li p {
+  font-size: 13px;
+}
+#notification-wrapper ul li a {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+#notification-wrapper ul li a:hover {
+  color: #E83650;
+}
+
+.notification-box {
+    cursor: pointer;
+}
+
+#notification-wrapper ul li section.notification-box {
+  display: inline-block;
+  padding: 8px;
+  min-height: 80px;
+  width: 380px;
+}
+#notification-wrapper ul li section.notification-box div.image {
+  width: 130px;
+  display: block;
+  float: left;
+}
+#notification-wrapper ul li section.notification-box div.image p {
+  display: inline;
+  margin: 0;
+  width: 100px;
+}
+#notification-wrapper ul li section.notification-box div.message {
+  float: left;
+  width: 250px;
+}
+#notification-wrapper ul li section.notification-box div.message p {
+  margin: 0;
+}
+#notification-wrapper ul li section.notification-box div.message p.content {
+  padding-top: 8px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #E83650;
+}
+#notification-wrapper ul li section.notification-box div.message p.content img {
+  float: left;
+  width: 24px;
+  height: 24px;
+  display: block;
+  padding: 0;
+  margin-left: 10px;
+}
+#notification-wrapper ul li section.notification-box div.message p.content span {
+  display: block;
+  float: left;
+  width: 196px;
+  margin-left: 10px;
+}
+#notification-wrapper ul li section.notification-box div.message p.time {
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+
+a.notifications-view-more {
+    background-image: linear-gradient(bottom, rgb(81,97,121) 0%, rgb(121,133,152) 50%);
+    background-image: -o-linear-gradient(bottom, rgb(81,97,121) 0%, rgb(121,133,152) 50%);
+    background-image: -moz-linear-gradient(bottom, rgb(81,97,121) 0%, rgb(121,133,152) 50%);
+    background-image: -webkit-linear-gradient(bottom, rgb(81,97,121) 0%, rgb(121,133,152) 50%);
+    background-image: -ms-linear-gradient(bottom, rgb(81,97,121) 0%, rgb(121,133,152) 50%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(81,97,121)),
+        color-stop(0.5, rgb(121,133,152))
+    );
+    display:block;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    &:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+}

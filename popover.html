@@ -1,0 +1,46 @@
+<!doctype html>
+<html data-ng-app="KoganApp" data-ng-csp>
+    <head>
+        <title>Kogan Notifications</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body data-ng-controller="NotificationsController">
+
+    <div id="notification-wrapper">
+        <div class="logo">
+            <a href="http://www.kogan.com/?utm_source=kogan&utm_medium=chrome-extension&utm_campaign=popup" target="_blank"><img src="logo.png"></a>
+            <img src="settings.png" ng-click="open_settings()" class="settings">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search here..." name="search" ng-model="keyword" ng-enter="search()" />
+            <button ng-click="search()">Search</button>
+        </div>
+
+        <ul id="notification-list">
+            <li data-ng-repeat="notification in notifications">
+            <section class="notification-box" ng-click="open_link(notification)" >
+                <div class="image">
+                    <a href="http://www.kogan.com{{ notification.data.url }}">
+                        <img src="http:{{ notification.data.image_url }}" alt="{{ notification.data.title }}"/>
+                    </a>
+                </div>
+                <div class="message">
+                     <a href="http://www.kogan.com{{ notification.data.url }}">{{ notification.data.title }}</a>
+                     <p class="content">
+                        <img src="http:{{ notification.icon }}" alt="{{ notification.data.title }}"/>
+                        <span>{{ notification.message }}</span>
+                    </p>
+                     <p class="time">{{ notification.time }}</p>
+                </div>
+            </section>
+            </li>
+        </ul>
+    </div>
+     <a href="http://www.kogan.com/au/notification/all/?utm_source=kogan&utm_medium=chrome-extension&utm_campaign=list-bottom" class="notifications-view-more" target="_blank">View more</a>
+
+    </body>
+</html>
+
